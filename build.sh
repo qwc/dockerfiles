@@ -20,7 +20,7 @@ then
     if [ -e "$file" ]
     then
       DIR=${file//\/Dockerfile}
-      TAG=${DIR//build\/}
+      TAG=${DIR//archlinux\/}
       echo Tagging build from $file with: $TAG
       docker build -t "$TAG" "$DIR"
     fi
