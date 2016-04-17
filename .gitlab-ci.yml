@@ -6,7 +6,7 @@ stages:
 build:
   stage: build
   script:
-    - build/imagebuilder/entrypoint.sh
+    - build.sh
     - echo "Done building (or doing nothing...)."
   tags:
     - shell

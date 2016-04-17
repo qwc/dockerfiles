@@ -1,14 +1,10 @@
-# dockerfiles
+# docker.files
 
 My collection of dockerfiles for various projects/purposes.
 
-## docker.config
+## archlinux
 
-Folder for my docker configurations, this files should be self-explanatory. One who wants to use them has to edit them anyway.
-
-## build
-
-Folder for my build scripts.
+Folder for my archlinux docker build scripts.
 
 ### archlinux_gcc5.3_qt5
 
