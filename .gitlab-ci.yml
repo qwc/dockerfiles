@@ -1,0 +1,12 @@
+variables:
+  USE_GIT: "yes"
+stages:
+  - build
+
+build:
+  stage: build
+  script:
+    - build/imagebuilder/entrypoint.sh
+    - echo "Done building (or doing nothing...)."
+  tags:
+    - shell
