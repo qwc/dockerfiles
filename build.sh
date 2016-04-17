@@ -11,7 +11,7 @@ echo "Building new image with USE_GIT=$USE_GIT or BUILD_IMAGE=$BUILD_IMAGE and D
 
 if [ "$USE_GIT" == "yes" ]
 then
-  FILES=`git show --pretty="format:" --name-only | grep -E "^build\/.*\/Dockerfile"`
+  FILES=`git show --pretty="format:" --name-only | grep -E "^archlinux\/.*\/Dockerfile"`
   echo Changed Dockerfiles:
   echo $FILES
   echo "Building these Dockerfiles now."
