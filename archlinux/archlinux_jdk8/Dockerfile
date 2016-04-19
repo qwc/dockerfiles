@@ -3,7 +3,7 @@ FROM        derjudge/archlinux
 MAINTAINER  Marcel M. Otte <qwc+docker@mmo.to>
 
 # install sudo for the standard user to execute root commands if needed.
-RUN pacman -S --noconfirm sudo
+RUN pacman -Sy --noconfirm sudo
 
 RUN echo "[multilib]" >> /etc/pacman.conf \
   && echo "SigLevel = TrustAll # PackageRequired" >> /etc/pacman.conf \
@@ -15,7 +15,7 @@ RUN echo "[multilib]" >> /etc/pacman.conf \
   && pacman -Sy
 
 # install jdk8, gradle, maven, ant
-RUN pacman -S --noconfirm \
+RUN pacman -Sy --noconfirm \
   extra/jdk8-openjdk \
   community/gradle \
   extra/apache-ant \
