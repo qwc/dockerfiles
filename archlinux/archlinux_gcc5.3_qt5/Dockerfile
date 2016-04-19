@@ -15,13 +15,13 @@ RUN echo "[multilib]" >> /etc/pacman.conf \
   && pacman -Sy
 
 # install cmake, gcc and doxygen
-RUN pacman -S --noconfirm \
+RUN pacman -Sy --noconfirm \
   make \
   cmake \
   doxygen \
   gcc
 # install qt5
-RUN pacman -S --noconfirm \
+RUN pacman -Sy --noconfirm \
   qt5-base \
   #qt5-3d \
   #qt5-canvas3d \
@@ -48,7 +48,7 @@ RUN pacman -S --noconfirm \
   qt5-xmlpatterns \
   python-pyqt5
 
-RUN pacman -S --noconfirm \
+RUN pacman -Sy --noconfirm \
   cppunit \
   yaml-cpp \
   git \
