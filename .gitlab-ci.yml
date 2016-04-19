@@ -6,7 +6,7 @@ stages:
 build:
   stage: build
   script:
-    - build.sh
+    - bash build.sh
     - echo "Done building (or doing nothing...)."
   tags:
     - shell
