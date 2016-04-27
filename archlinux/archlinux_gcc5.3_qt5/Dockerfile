@@ -3,7 +3,7 @@ FROM        derjudge/archlinux
 MAINTAINER  Marcel M. Otte <qwc+docker@mmo.to>
 
 # install sudo for the standard user to execute root commands if needed.
-RUN pacman -S --noconfirm sudo
+RUN pacman -Sy --noconfirm sudo
 
 RUN echo "[multilib]" >> /etc/pacman.conf \
   && echo "SigLevel = TrustAll # PackageRequired" >> /etc/pacman.conf \
@@ -20,7 +20,7 @@ RUN pacman -Sy --noconfirm \
   cmake \
   doxygen \
   gcc
-  
+
 # install qt5
 RUN pacman -Sy --noconfirm \
   qt5-base \
