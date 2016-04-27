@@ -20,6 +20,7 @@ RUN pacman -Sy --noconfirm \
   cmake \
   doxygen \
   gcc
+  
 # install qt5
 RUN pacman -Sy --noconfirm \
   qt5-base \
