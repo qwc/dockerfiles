@@ -25,6 +25,7 @@ RUN pacman -Sy --noconfirm \
 # user in wheel are allowed to use sudo commands without password!
 RUN echo "%wheel ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/wheel
 
+
 # user which does all the work
 RUN useradd -m -d /home/devel -u 1000 -G users,tty,wheel -s /bin/bash devel
 USER devel
