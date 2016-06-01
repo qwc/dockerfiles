@@ -52,7 +52,8 @@ RUN pacman -Sy --noconfirm \
 RUN pacman -Sy --noconfirm \
   cppunit \
   yaml-cpp \
-  git
+  git \
+  gradle
 # user in wheel are allowed to use sudo commands without password!
 RUN echo "%wheel ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/wheel
 
