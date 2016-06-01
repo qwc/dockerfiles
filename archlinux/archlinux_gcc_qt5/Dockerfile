@@ -14,13 +14,13 @@ RUN echo "[multilib]" >> /etc/pacman.conf \
 #  && cat /etc/pacman.conf | sed 's/^# SigLevel(.*)$/SigLevel\1/g' \ # TODO: get that running, maybe with replace all #SigLevel with Trustall?
   && pacman -Sy
 
+
 # install cmake, gcc and doxygen
 RUN pacman -Sy --noconfirm \
   make \
   cmake \
   doxygen \
   gcc
-
 # install qt5
 RUN pacman -Sy --noconfirm \
   qt5-base \
@@ -52,9 +52,7 @@ RUN pacman -Sy --noconfirm \
 RUN pacman -Sy --noconfirm \
   cppunit \
   yaml-cpp \
-  git \
-  gradle
-
+  git
 # user in wheel are allowed to use sudo commands without password!
 RUN echo "%wheel ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/wheel
 
