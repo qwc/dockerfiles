@@ -14,7 +14,6 @@ RUN echo "[multilib]" >> /etc/pacman.conf \
 #  && cat /etc/pacman.conf | sed 's/^# SigLevel(.*)$/SigLevel\1/g' \ # TODO: get that running, maybe with replace all #SigLevel with Trustall?
   && pacman -Sy
 
-
 # install cmake, gcc and doxygen
 RUN pacman -Sy --noconfirm \
   make \
