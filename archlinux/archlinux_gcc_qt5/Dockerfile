@@ -52,6 +52,8 @@ RUN pacman -Sy --noconfirm \
 RUN pacman -Sy --noconfirm \
   cppunit \
   yaml-cpp \
+  boost \
+  boost-lib \
   git \
   gradle
 # user in wheel are allowed to use sudo commands without password!
