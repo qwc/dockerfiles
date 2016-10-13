@@ -26,7 +26,6 @@ RUN pacman -Sy --noconfirm \
   #qt5-3d \
   #qt5-canvas3d \
   qt5-declarative \
-  qt5-enginio \
   qt5-graphicaleffects \
   #qt5-gstreamer \
   qt5-imageformats \
