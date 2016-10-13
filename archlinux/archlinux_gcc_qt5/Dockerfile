@@ -5,6 +5,9 @@ MAINTAINER  Marcel M. Otte <qwc+docker@mmo.to>
 # install sudo for the standard user to execute root commands if needed.
 RUN pacman -Sy --noconfirm sudo
 
+RUN echo "de_DE.UTF-8 UTF-8" > /etc/locale.gen && \
+	echo "en_GB.UTF-8 UTF-8" >> /etc/locale.gen
+
 RUN echo "[multilib]" >> /etc/pacman.conf \
   && echo "SigLevel = TrustAll # PackageRequired" >> /etc/pacman.conf \
   && echo "Include = /etc/pacman.d/mirrorlist" >> /etc/pacman.conf \
@@ -51,9 +54,11 @@ RUN pacman -Sy --noconfirm \
   cppunit \
   yaml-cpp \
   boost \
-  boost-lib \
+  boost-libs \
   git \
   gradle
+
+RUN pacman -Scc --noconfirm
 # user in wheel are allowed to use sudo commands without password!
 RUN echo "%wheel ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/wheel
 
