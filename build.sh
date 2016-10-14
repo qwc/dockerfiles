@@ -22,7 +22,7 @@ then
       DIR=${file//\/Dockerfile}
       TAG=${DIR//archlinux\/}
       echo Tagging build from $file with: $TAG
-      docker build --no-cache -t "$TAG" "$DIR"
+      docker build --no-cache -t "qwick/buildimages:$TAG" "$DIR"
     fi
   done
 else
