@@ -7,7 +7,8 @@ RUN pacman -Sy --noconfirm \
   make \
   cmake \
   doxygen \
-  gcc
+  gcc \
+  && yes | pacman -Scc
 # install qt5
 RUN pacman -Sy --noconfirm \
   qt5-base \
@@ -33,7 +34,8 @@ RUN pacman -Sy --noconfirm \
   #qt5-webkit \
   #qt5-x11extras \
   qt5-xmlpatterns \
-  python-pyqt5
+  python-pyqt5 \
+  && yes | pacman -Scc
 # install other dependencies
 RUN pacman -Sy --noconfirm \
   cppunit \
@@ -41,9 +43,8 @@ RUN pacman -Sy --noconfirm \
   boost \
   boost-libs \
   git \
-  gradle
+  && yes | pacman -Scc
 
-RUN echo "y\ny" | pacman -Scc
 
 ONBUILD USER root
 ONBUILD WORKDIR /
