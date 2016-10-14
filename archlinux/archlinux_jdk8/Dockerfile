@@ -8,9 +8,9 @@ RUN pacman -Sy --noconfirm \
   community/gradle \
   extra/apache-ant \
   community/maven \
-  git
+  git \
+  && yes | pacman -Scc
 
-RUN echo "y\ny" | pacman -Scc
 
 ONBUILD USER root
 ONBUILD WORKDIR /
