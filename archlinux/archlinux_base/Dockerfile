@@ -15,11 +15,10 @@ RUN echo "[multilib]" >> /etc/pacman.conf \
 #  && echo "Server = http://repo.archlinux.fr/$arch" >> /etc/pacman.conf \
   && cat /etc/pacman.conf | sed 's/^SigLevel\(.*\)$/SigLevel = TrustAll # CHANGED!!! \1/g' > /tmp/pacman.conf && mv /tmp/pacman.conf /etc/pacman.conf \
 #  && cat /etc/pacman.conf | sed 's/^# SigLevel(.*)$/SigLevel\1/g' \ # TODO: get that running, maybe with replace all #SigLevel with Trustall?
-  && pacman -Sy --noconfirm sudo
+  && pacman -Sy --noconfirm sudo \
+  && yes | pacman -Scc
 
 
-
-  RUN echo "y\ny" | pacman -Scc
   # user in wheel are allowed to use sudo commands without password!
   RUN echo "%wheel ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/wheel
 
