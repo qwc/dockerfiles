@@ -3,7 +3,7 @@ FROM        derjudge/archlinux
 MAINTAINER  Marcel M. Otte <qwc+docker@mmo.to>
 
 # install sudo for the standard user to execute root commands if needed.
-RUN pacman -Sy --noconfirm sudo
+RUN pacman -Sy --noconfirm sudo yes
 
 RUN echo "de_DE.UTF-8 UTF-8" > /etc/locale.gen && \
 	echo "en_GB.UTF-8 UTF-8" >> /etc/locale.gen
