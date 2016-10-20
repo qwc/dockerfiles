@@ -11,7 +11,7 @@ echo "Building new image with USE_GIT=$USE_GIT or BUILD_IMAGE=$BUILD_IMAGE and D
 
 if [ "$USE_GIT" == "yes" ]
 then
-  FILES=`git show --pretty="format:" --name-only | grep -E "^archlinux\/.*\/Dockerfile"`
+  FILES=`git show --pretty="format:" --name-only | grep -E "^[a-zA-Z0-9_-]+\/.*\/Dockerfile"`
   echo Changed Dockerfiles:
   echo $FILES
   echo "Building these Dockerfiles now."
@@ -20,7 +20,7 @@ then
     if [ -e "$file" ]
     then
       DIR=${file//\/Dockerfile}
-      TAG=${DIR//archlinux\/}
+      TAG=${DIR#*\/}
       echo Tagging build from $file with: $TAG
       docker build --no-cache -t "qwick/buildimages:$TAG" "$DIR"
     fi
