@@ -4,7 +4,7 @@ MAINTAINER  Marcel M. Otte <qwc+docker@mmo.to>
 
 RUN apt-get update && yes | apt-get upgrade
 RUN yes | apt-get install ruby ruby-dev rubygems build-essential \
-    wget openjdk-8-jre-headless unzip git
+    wget openjdk-8-jre-headless unzip git dpkg-sig
 
 RUN gem install --no-ri --no-rdoc fpm
 
